@@ -1,9 +1,10 @@
 import { BotMessageSquare } from "lucide-react";
-import { BatteryCharging } from "lucide-react";
-import { Fingerprint } from "lucide-react";
+
+import { ShieldAlert } from "lucide-react";
 import { ShieldHalf } from "lucide-react";
-import { PlugZap } from "lucide-react";
-import { GlobeLock } from "lucide-react";
+
+import { MapPinned } from "lucide-react";
+import { Users } from "lucide-react";
 
 import user1 from "../assets/profile-pictures/user1.jpg";
 import user2 from "../assets/profile-pictures/user2.jpg";
@@ -11,13 +12,6 @@ import user3 from "../assets/profile-pictures/user3.jpg";
 import user4 from "../assets/profile-pictures/user4.jpg";
 import user5 from "../assets/profile-pictures/user5.jpg";
 import user6 from "../assets/profile-pictures/user6.jpg";
-
-export const navItems = [
-  { label: "Features", href: "#" },
-  { label: "Workflow", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "Testimonials", href: "#" },
-];
 
 export const testimonials = [
   {
@@ -61,118 +55,53 @@ export const testimonials = [
 export const features = [
   {
     icon: <BotMessageSquare />,
-    text: "Drag-and-Drop Interface",
+    text: "Real-Time Report Submission",
     description:
-      "Easily design and arrange your VR environments with a user-friendly drag-and-drop interface.",
+      "Emergency Report Form: Users can quickly submit reports with details about disasters (e.g., type, severity, location).Photo and Video Upload: Attach media to reports for better visualization and verification.",
   },
   {
-    icon: <Fingerprint />,
-    text: "Multi-Platform Compatibility",
+    icon: <MapPinned />,
+    text: "Interactive Map",
     description:
-      "Build VR applications that run seamlessly across multiple platforms, including mobile, desktop, and VR headsets.",
+      "Disaster Mapping: Visualize disaster reports on an interactive map with real-time updates.Geolocation: Automatically capture the location of reports and display it on the map.",
   },
   {
     icon: <ShieldHalf />,
-    text: "Built-in Templates",
+    text: "Search and Filtering",
     description:
-      "Jumpstart your VR projects with a variety of built-in templates for different types of applications and environments.",
+      "Disaster Type: Filter reports by type (e.g., floods, earthquakes, wildfires).Severity Levels: Filter reports based on severity (e.g., minor, major, catastrophic).Date and Location: Search and filter by date range and geographical location.",
   },
   {
-    icon: <BatteryCharging />,
-    text: "Real-Time Preview",
-    description:
-      "Preview your VR application in real-time as you make changes, allowing for quick iterations and adjustments.",
-  },
-  {
-    icon: <PlugZap />,
-    text: "Collaboration Tools",
-    description:
-      "Work together with your team in real-time on VR projects, enabling seamless collaboration and idea sharing.",
-  },
-  {
-    icon: <GlobeLock />,
-    text: "Analytics Dashboard",
-    description:
-      "Gain valuable insights into user interactions and behavior within your VR applications with an integrated analytics dashboard.",
-  },
-];
+    icon: <ShieldAlert />,
 
-export const checklistItems = [
-  {
-    title: "Code merge made easy",
+    text: "Emergency Alerts and Notifications",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "Real-Time Alerts: Push notifications for critical updates and emergencies.Email Notifications: Alert users about new reports, updates, and emergency information.",
   },
   {
-    title: "Review code without worry",
+    icon: <Users />,
+    text: "Community Engagement",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
+      "Discussion Forums: Facilitate community discussions and coordination.Commenting and Voting: Allow users to comment on and upvote reports for important updates.",
   },
   {
-    title: "AI Assistance to reduce time",
+    icon: <ShieldHalf />,
+    text: "Verification and Moderation",
     description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
-  },
-  {
-    title: "Share work in minutes",
-    description:
-      "Track the performance of your VR apps and gain insights into user behavior.",
-  },
-];
-
-export const pricingOptions = [
-  {
-    title: "Free",
-    price: "$0",
-    features: [
-      "Private board sharing",
-      "5 Gb Storage",
-      "Web Analytics",
-      "Private Mode",
-    ],
-  },
-  {
-    title: "Pro",
-    price: "$10",
-    features: [
-      "Private board sharing",
-      "10 Gb Storage",
-      "Web Analytics (Advance)",
-      "Private Mode",
-    ],
-  },
-  {
-    title: "Enterprise",
-    price: "$200",
-    features: [
-      "Private board sharing",
-      "Unlimited Storage",
-      "High Performance Network",
-      "Private Mode",
-    ],
+      "Report Verification: Tools for verifying the authenticity of reports, possibly with user or admin moderation.Admin Review: Admin tools for managing, reviewing, and validating disaster reports.",
   },
 ];
 
 export const resourcesLinks = [
-  { href: "#", text: "Getting Started" },
-  { href: "#", text: "Documentation" },
-  { href: "#", text: "Tutorials" },
-  { href: "#", text: "API Reference" },
-  { href: "#", text: "Community Forums" },
+  { href: "#", text: "About Us" },
+  { href: "#", text: "Contact Information" },
+  { href: "#", text: "Terms of Service" },
+  { href: "#", text: "Privacy Policy" },
+  { href: "#", text: "FAQ" },
 ];
 
 export const platformLinks = [
-  { href: "#", text: "Features" },
-  { href: "#", text: "Supported Devices" },
-  { href: "#", text: "System Requirements" },
-  { href: "#", text: "Downloads" },
-  { href: "#", text: "Release Notes" },
-];
-
-export const communityLinks = [
+  { href: "#", text: "Discussion Forum" },
+  { href: "#", text: "Blog" },
   { href: "#", text: "Events" },
-  { href: "#", text: "Meetups" },
-  { href: "#", text: "Conferences" },
-  { href: "#", text: "Hackathons" },
-  { href: "#", text: "Jobs" },
 ];

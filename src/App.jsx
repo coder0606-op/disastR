@@ -1,23 +1,19 @@
-import Feature from "./components/Feature";
-import Footer from "./components/Footer";
-import Herosection from "./components/Herosection";
-import Navbar from "./components/Navbar";
-import Pricing from "./components/Pricing";
-import Testimony from "./components/Testimony";
-import Workoverflow from "./components/Workoverflow";
+import React from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+
+import GeolocationMap from "./components/MapComponent";
+import Home from "./pages/Home";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <div className="max-w-7xl mx-auto pt-20 px-4">
-        <Herosection />
-        <Feature />
-        <Workoverflow />
-        <Pricing />
-        <Testimony />
-        <Footer />
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/know-your-surrounding" element={<GeolocationMap />} />
+          {/* <Route path="/services" element={}/> */}
+        </Routes>
+      </Router>
     </>
   );
 }
