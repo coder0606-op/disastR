@@ -178,7 +178,9 @@ const Home = () => {
                 Create A Report
               </a>
               <SignedOut>
-                <SignInButton>Login</SignInButton>
+                <SignInButton className="border rounded-md  py-2 px-2 text-sm bg-gradient-to-r from-orange-600 to-red-800">
+                  Login/Register
+                </SignInButton>
               </SignedOut>
               <SignedIn>
                 <UserButton />
