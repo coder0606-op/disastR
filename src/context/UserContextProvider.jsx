@@ -12,10 +12,11 @@ const UserContextProvider = ({ children }) => {
   const { user } = useUser();
   useEffect(() => {
     if (isSignedIn) {
-      setUserProfile(...userProfile, {
+      setUserProfile((prevProfile) => ({
+        ...prevProfile,
         name: user.fullName,
         email: user.emailAddresses[0].emailAddress,
-      });
+      }));
     }
   }, [user, isSignedIn]);
   return (
