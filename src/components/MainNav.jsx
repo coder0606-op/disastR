@@ -115,22 +115,7 @@ const Home = () => {
         </button>
       </section>
 
-      {/* main content lies here */}
-      {/* <main>
-        <div id="home">
-          <Gallery />
-        </div>
-        <div id="about">
-          <About />
-        </div>
-        <div id="services">
-          <Services />
-        </div>
-        <div id="contact">
-          <Contact />
-        </div>
-      </main> */}
-      {/* Overlay Aside */}
+
       <aside
         ref={asideRef}
         className="fixed top-0 left-0 w-full h-screen bg-gradient-to-br from-orange-400 to-zinc-900 transform -translate-x-full z-0"

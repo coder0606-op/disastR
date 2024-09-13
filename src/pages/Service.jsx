@@ -2,7 +2,15 @@ import React from 'react'
 
 const Service = () => {
   return (
-    <div>Service</div>
+    <main>
+        <section>
+                <img src="#" alt="map" />
+        </section>
+        <section>
+                <div></div>
+                <div></div>
+        </section>
+    </main>
   )
 }
 
