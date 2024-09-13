@@ -1,5 +1,6 @@
 import React from "react";
 import videooo from "../assets/videooo.mp4";
+import { Link } from "react-router-dom";
 
 const Herosection = () => {
   return (
@@ -20,18 +21,18 @@ const Herosection = () => {
           Insights
         </p>
         <div className="flex justify-center my-10 space-x-6">
-          <a
+          <Link
             className="border  rounded-md py-2 px-2 bg-gradient-to-r from-orange-500 to to-orange-800"
-            href="#"
+            to="/create-a-report"
           >
             Create A Report
-          </a>
-          <a
+          </Link>
+          <Link
             className="border text-sm lg:text-base  rounded-md py-2 px-2"
-            href="#"
+            to="/know-your-surrounding"
           >
             Know Your Surrounding
-          </a>
+          </Link>
         </div>
         <div className="flex mt-10 justify-center">
           <video
