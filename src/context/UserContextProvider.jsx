@@ -8,20 +8,28 @@ const UserContextProvider = ({ children }) => {
     name: "",
     email: "",
   });
+  const [globalReport, setGlobalReport] = useState({
+    report: "",
+    image: [],
+  });
   const { isSignedIn } = useAuth();
   const { user } = useUser();
+
   useEffect(() => {
-    if (isSignedIn) {
+    if (isSignedIn && user) {
       setUserProfile((prevProfile) => ({
         ...prevProfile,
-        name: user.fullName,
-        email: user.emailAddresses[0].emailAddress,
+        name: user.fullName || "",
+        email: user.emailAddresses[0]?.emailAddress || "",
       }));
     }
   }, [user, isSignedIn]);
+
   return (
-    <UserContext.Provider value={{userProfile}}>
-        {children}
+    <UserContext.Provider
+      value={{ userProfile, globalReport, setGlobalReport }}
+    >
+      {children}
     </UserContext.Provider>
   );
 };
