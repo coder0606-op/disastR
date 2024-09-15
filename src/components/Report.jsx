@@ -5,15 +5,38 @@ import Webcam from "react-webcam";
 import { UserContext } from "../context/UserContextProvider";
 
 const Report = () => {
-  const { globalReport, setGlobalReport } = useContext(UserContext);
+  const { globalReports, setGlobalReports } = useContext(UserContext);
   const [reportDetails, setReportDetails] = useState({
     report: "",
     image: [],
+    vote: 1,
+    id: 1,
+    latitude: "",
+    longitude: "",
   });
   const [flip, setFlip] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(null);
   const navigate = useNavigate();
   const cameraRef = useRef(null);
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setReportDetails((prevDetails) => ({
+            ...prevDetails,
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude,
+          }));
+        },
+        (error) => {
+          console.error("Error fetching location: ", error);
+        }
+      );
+    } else {
+      console.error("Geolocation not supported");
+    }
+  }, []);
 
   const handleLogoClick = () => {
     navigate("/");
@@ -60,8 +83,17 @@ const Report = () => {
     if (reportDetails.image.length === 0 || reportDetails.report === "") {
       alert("Please fill in all fields");
     } else {
-      setGlobalReport(reportDetails);
-      alert("Report submitted successfully!"); // Feedback to the user
+      const newReport = { ...reportDetails, id: globalReports.length + 1 }; // Assign new ID
+      setGlobalReports((prevReports) => [...prevReports, newReport]);
+      alert("Report submitted successfully!");
+
+      // Clear the form after submission
+      setReportDetails({
+        report: "",
+        image: [],
+        vote: 1,
+        id: globalReports.length + 2, // Increment ID for next report
+      });
     }
   };
 

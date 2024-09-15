@@ -8,10 +8,7 @@ const UserContextProvider = ({ children }) => {
     name: "",
     email: "",
   });
-  const [globalReport, setGlobalReport] = useState({
-    report: "",
-    image: [],
-  });
+  const [globalReports, setGlobalReports] = useState([]);
   const { isSignedIn } = useAuth();
   const { user } = useUser();
 
@@ -27,7 +24,7 @@ const UserContextProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{ userProfile, globalReport, setGlobalReport }}
+      value={{ userProfile, globalReports, setGlobalReports }}
     >
       {children}
     </UserContext.Provider>
