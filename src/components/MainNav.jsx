@@ -6,6 +6,7 @@ import {
 } from "@clerk/clerk-react";
 import gsap from "gsap";
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 
 // import { useNavigate } from "react-router-dom";
 
@@ -159,9 +160,9 @@ const Home = () => {
 
           <div className="flex items-center justify-between mt-10 ">
             <div className="flex space-x-12">
-              <a className="border rounded-md  py-2 px-2 text-sm" href="#">
+              <Link className="border rounded-md  py-2 px-2 text-sm" to="create-a-report">
                 Create A Report
-              </a>
+              </Link>
               <SignedOut>
                 <SignInButton className="border rounded-md  py-2 px-2 text-sm bg-gradient-to-r from-orange-600 to-red-800">
                   Login/Register
