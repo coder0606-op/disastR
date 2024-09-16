@@ -6,7 +6,7 @@ import {
 } from "@clerk/clerk-react";
 import gsap from "gsap";
 import React, { useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // import { useNavigate } from "react-router-dom";
 
@@ -16,6 +16,7 @@ const Home = () => {
   const span3Ref = useRef();
   const asideRef = useRef();
   const [isToggled, setIsToggled] = useState(false);
+  const navigate = useNavigate()
   // const navigate = useNavigate();
   React.useEffect(() => {
     const handleKeydown = (e) => {
@@ -83,14 +84,10 @@ const Home = () => {
   };
 
   const handleLinkClick = (id, path) => {
-    // handleHamburger();
-    // navigate(path)
-    // setTimeout(() => {
-    //   const section = document.getElementById(id);
-    //   if (section) {
-    //     section.scrollIntoView({ behavior: "smooth" });
-    //   }
-    // }, 1500);
+    handleHamburger()
+    setTimeout(()=>{
+      navigate(path)
+    },1300)
   };
 
   return (
@@ -142,7 +139,7 @@ const Home = () => {
             </li>
             <li>
               <button
-                onClick={() => handleLinkClick("services", "/services")}
+                onClick={() => handleLinkClick("services", "/know-your-surrounding")}
                 className="text-lg text-white"
               >
                 Services

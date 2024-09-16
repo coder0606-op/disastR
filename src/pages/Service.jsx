@@ -1,6 +1,10 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { initialReports } from "../constants/Reports";
+import GeolocationMap from "../components/MapComponent";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 
 const Service = () => {
   const [reports, setReports] = useState(initialReports);
@@ -22,8 +26,20 @@ const Service = () => {
     }));
   };
 
+  const mainRef = useRef(null)
+  useGSAP(()=>{
+    gsap.fromTo(mainRef.current,{
+      opacity: 0,
+      
+    },{
+      opacity: 1,
+      duration: 3,
+      
+    })
+  })
+  
   return (
-    <main className="h-full w-full">
+    <main className="h-full w-full" ref={mainRef}>
       <header className="border-b-2 border-neutral-700 h-14">
         <nav className="w-full h-full p-3">
           <Link className="cursor-pointer" to={"/"}>
@@ -31,6 +47,10 @@ const Service = () => {
           </Link>
         </nav>
       </header>
+      <section className="w-full px-4 sm:p-10">
+
+        <GeolocationMap/>
+      </section>
       <section className="mt-5">
         <section className="w-full grid sm:grid-cols-3 grid-cols-2 place-items-center gap-7">
           {reports.length > 0 ? (
